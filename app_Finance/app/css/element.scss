@@ -19,13 +19,16 @@
     background-color: $bgcolor;
     padding: $padding;
     margin:$margin;
-    height: $height;
-    line-height: $height;
-    padding: $padding;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    text-align: center;
-    color:$color;
-    font-size: $fontSize;
+    >h4{
+        height: $height;
+        line-height: $height;
+        padding: $txtPadding;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        text-align: center;
+        color:$color;
+        font-size: $fontSize;
+    } 
+   
 }
