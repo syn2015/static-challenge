@@ -6,6 +6,7 @@
         <Rslider/>
         <Dialy/>
         <In/>
+        <More/>
         <Footer cname="mfooter"/>
         <Navbar/>
     </div>
@@ -20,7 +21,7 @@ import Rslider from "./rslider.vue"
 
 import Dialy from "./dialy.vue"
 import In from "./in.vue"
-// import Adc from "./adc.vue"
+import More from "./more.vue"
 
 export default {
     components: {
@@ -30,6 +31,7 @@ export default {
         Rslider,
         Dialy,
         In,
+        More,
     },
 }
 </script>
