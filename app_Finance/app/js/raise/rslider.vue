@@ -43,10 +43,13 @@ export default {
        font-family: PingFangSC-Medium;
        font-size: 28px;
        color: #333;
+        height: 72px;
+           line-height: 72px;
        em{
            color: #ddd;
            float: right;
            margin-right: 20px;
+
        }
     }
 }
@@ -65,7 +68,7 @@ export default {
         line-height: 72px;
         overflow: hidden;
         padding-left: 178px;
-        background:url(//m.jr.jd.com/spe/qyy/main/images/scroll_title_img.png) left top no-repeat;
+        background:url(//m.jr.jd.com/spe/qyy/main/images/scroll_title_img.png) left center no-repeat;
 
     }
 

@@ -4,6 +4,8 @@
     <div >
         <Heador/>
         <Rslider/>
+        <Dialy/>
+        <In/>
         <Footer cname="mfooter"/>
         <Navbar/>
     </div>
@@ -15,8 +17,9 @@ import Footer from "../public/footer.vue"
 import Navbar from "../public/navbar.vue"
 import Rslider from "./rslider.vue"
 
-// import Adb from "./adb.vue"
-// import Finance from "./finance.vue"
+
+import Dialy from "./dialy.vue"
+import In from "./in.vue"
 // import Adc from "./adc.vue"
 
 export default {
@@ -25,6 +28,8 @@ export default {
         Footer,
         Navbar,
         Rslider,
+        Dialy,
+        In,
     },
 }
 </script>
