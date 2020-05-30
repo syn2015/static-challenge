@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Helvetica, "PingFang SC", "Microsoft Yahei", sans-serif;
+    font-family: Helvetica,"PingFang SC","Microsoft Yahei",sans-serif;
+    font-size: 14px;
 
 }
 
@@ -158,6 +159,7 @@ section {
     position: relative;
 
 }
+
 /*设置背景 */
 .section-bg::before {
     content: " ";
@@ -244,12 +246,14 @@ section {
     padding: 0;
     padding-top: 72px;
 }
-.filter-btns{
+
+.filter-btns {
     margin-top: 54px;
     margin-bottom: 38px;
 }
+
 /* 每个筛选按钮 */
-.filter-btn{
+.filter-btn {
     margin: 0 7px;
     background-color: var(--secondary-color);
     border: 0;
@@ -257,73 +261,163 @@ section {
     padding: 8px 18px;
     border-radius: 4px;
     cursor: pointer;
-    transition: 0.4s ;
+    transition: 0.4s;
 }
+
 /* 按钮激活和hover状态 */
-.filter-btn:focus, .filter-btn:active{
+.filter-btn:focus,
+.filter-btn:active {
     outline: none;
 }
+
 /* 激活 */
-.filter-btn.active,.filter-btn:hover{
+.filter-btn.active,
+.filter-btn:hover {
     background-color: var(--primary-color);
     color: white;
 }
+
 /* 整体宽度 */
-.showcases .cases{
+.showcases .cases {
     width: 100vw;
 
 }
-.showcases .case-item{
+
+.showcases .case-item {
     /* 容器保持比例5：4 且超出不可见*/
     width: 25vw;
     height: 20vw;
     overflow: hidden;
 }
+
 /* 每个图片 */
-.case-item img{
+.case-item img {
     height: 100%;
     /* 等比例缩放 */
     object-fit: cover;
 }
 
 /* 服务流程 */
-.service{
+.service {
     padding-top: 131px;
 }
-.services{
+
+.services {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
     column-gap: 38px;
     /* 留下间隙显示阴影 */
     row-gap: 34px;
 }
-.service-item{
+
+.service-item {
     display: grid;
-    grid-template-areas: "icon title" "icon content";
+    grid-template-areas: "icon title""icon content";
     /* 每列宽度70px,剩下的填满 */
     grid-template-columns: 70px 1fr;
     grid-template-rows: 1fr 3fr;
     padding: 24px;
     box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.06);
 }
-.service-item i.fas{
+
+.service-item i.fas {
     grid-area: icon;
     font-size: 42px;
     color: var(--primary-color);
     padding-top: 6px;
 
 }
-.service-item .service-title{
+
+.service-item .service-title {
     grid-area: title;
     color: var(--text-color-darker);
     font-size: 24px;
 
 }
-.service-item .service-content{
+
+.service-item .service-content {
     grid-area: content;
-    color:var(--text-color-gray);
+    color: var(--text-color-gray);
     line-height: 30px;
     font-size: 16px;
     margin-top: 8px;
+}
+
+/* 团队介绍 */
+.team-intro {
+    margin-top: 48px;
+    padding-top: 62px;
+    padding-bottom: 52px;
+}
+
+.team-members {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 24px;
+    margin-top: 86px;
+}
+
+/* 每一个成员 */
+.team-member {
+    background-color: white;
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding-bottom: 28px;
+    transition: 0.4s;
+    display: grid;
+    justify-items: center;
+}
+
+/* 用作蒙版 */
+.profile-image {
+    overflow: hidden;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 264px;
+    object-fit: cover;
+    /* 放大以后图片的摆放方式 */
+    object-position: top center;
+}
+
+/* 名字 */
+.team-member .name {
+    margin-top: 18px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color-dark);
+}
+
+/* 职位 */
+.team-member .position {
+    color: var(--text-color-dark-gray);
+    margin-top: 12px;
+    margin-bottom: 18px;
+}
+
+/* 社交账号 */
+.social-links {
+    width: 100%;
+    min-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 42px;
+
+}
+
+.social-links li {
+    list-style: none;
+}
+
+.social-links li a {
+    color: var(--text-color-dark);
+    /* font-size: 14px; */
+    text-decoration: none;
+}
+
+.team-member:hover {
+    transform: translateY(-20px) scale(1.05);
+    box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.1);
 }
