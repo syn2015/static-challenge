@@ -451,7 +451,8 @@ section {
     height: 255px;
     background-image: url(images/adult-business-computer-contemporary-380769.jpg);
     background-size: cover;
-    background-position: center ;
+    background-position: center center ;
+    /* background-position: center ; */
     display: grid;
     /* 四列，最大220px,最小自动调整 */
     grid-template-columns: repeat(4,minmax(auto,220px));

@@ -72,3 +72,49 @@ window.addEventListener('scroll', () => {
         scrollToTop.style.display = 'none'
     }
 })
+// scrollReveal动画
+// 通用配置项
+const staggeringOption = {
+    delay: 300, //延迟
+    distance: '50px', //50px移动
+    duration: 500, //执行时间
+    easing: 'ease-in-out', //动画函数
+    origin: 'bottom' //从底部开始
+}
+ScrollReveal().reveal('.feature', {
+    ...staggeringOption,
+    interval: 350
+})
+ScrollReveal().reveal('.service-item', {
+    ...staggeringOption,
+    interval: 350
+})
+const dataSectionEl = document.querySelector('.data-section');
+
+ScrollReveal().reveal('.data-section', {
+    beforeReveal: () => {
+        anime({
+            targets: '.data-piece .num',
+            innerHTML: el => {
+                // 变化从0到目标的innerHTML的值
+                return [0, el.innerHTML];
+            },
+            duration: 2000,
+            round: 1,  //步长为1
+            easing: 'easeInExpo' //越来越快
+        });
+        // 更新位置
+        dataSectionEl.style.backgroundPosition = `center calc(50%-${dataSectionEl.getBoundingClientRect().bottom/5}px)`;
+
+    }
+})
+// 背景视差
+window.addEventListener('scroll', () => {
+    //判断是否在可见区域
+    const bottom=dataSectionEl.getBoundingClientRect().bottom;
+    const top=dataSectionEl.getBoundingClientRect().top;
+    if (bottom >= 0 && top <= window.innerHTML) {
+        // x轴不动
+        dataSectionEl.style.backgroundPosition = `center calc(50%-${bottom/5}px)`;
+    }
+})
