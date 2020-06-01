@@ -22,12 +22,12 @@
     <header >
         <div class="log">HB科技</div>
         <nav>
-            <a href="#">首页</a>
-            <a href="#">关于我们</a>
-            <a href="#">成功案例</a>
-            <a href="#">服务流程</a>
-            <a href="#">团队介绍</a>
-            <a href="#">公司动态</a>
+            <a href="#home">首页</a>
+            <a href="#about-us">关于我们</a>
+            <a href="#showcases">成功案例</a>
+            <a href="#service">服务流程</a>
+            <a href="#team-intro">团队介绍</a>
+            <a href="#company-activities">公司动态</a>
             <!-- font-awesome库 -->
             <i class="fas fa-search"></i>
 
@@ -42,7 +42,7 @@
 
     </header>
     <!-- 轮播 -->
-    <div class="glide">
+    <div id="home" class="glide">
         <!-- 轮播轨道 -->
         <div class="glide__track" data-glide-el="track">
             <div class="glide__slides">
@@ -127,7 +127,7 @@
             </div>
         </section>
         <!-- 成功案例 -->
-        <section class="showcases section-bg">
+        <section id="showcases" class="showcases section-bg">
             <h2 class="title-about ">
                 成功案例
             </h2>
@@ -166,7 +166,7 @@
             </div>
         </section>
         <!-- 服务流程 -->
-        <section class="service">
+        <section id="service" class="service">
             <h2 class="title-about">服务流程</h2>
             <p class="intro">
                 网络综合公司，提供包括网络基础服务（比如域名，主机，邮箱）和网络增值服务（如网站建设和推广，网站优化）等业务
@@ -217,7 +217,7 @@
             </div>
         </section>
         <!-- 团队介绍 -->
-        <section class="team-intro section-bg">
+        <section  id="team-intro" class="team-intro section-bg">
             <h2 class="title-about">团队介绍</h2>
             <div class="team-members">
                 <div class="team-member">
@@ -275,7 +275,7 @@
             </div>
         </section>
         <!-- 数据区域 -->
-        <section class="data-section">
+        <section   class="data-section">
             <div class="data-piece">
                 <i class="fas fa-code"></i>
                 <div class="num">156</div>
@@ -298,7 +298,7 @@
             </div>
         </section>
         <!-- 公司动态 -->
-        <section class="company-activities">
+        <section  id="company-activities" class="company-activities">
             <h2 class="title-about">公司动态</h2>
             <p class="intro">关注公司动态，第一时间获取一手消息</p>
             <div class="activities">
@@ -416,6 +416,8 @@
             </p>
         </div>
     </footer>
+    <!-- smooth-scroll库 -->
+    <script src="/libs/smooth-scroll/smooth-scroll.polyfills.min.js"></script>
     <!-- isotope库-->
     <script src="./libs/isotope/isotope.pkgd.min.js"></script>
 

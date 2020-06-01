@@ -118,3 +118,27 @@ window.addEventListener('scroll', () => {
         dataSectionEl.style.backgroundPosition = `center calc(50%-${bottom/5}px)`;
     }
 })
+// smooth-scroll库，监听跳转按钮（包含#号的）
+const scroll=new SmoothScroll('nav a[href*="#"],.scrollToTop a[href*="#"]',{
+    header:'header', // 滚动到目标区域
+    offset:80, //多余滚动80px
+})
+// 探索更多按钮
+const exploreBtnEls=document.querySelectorAll('.explore-btn');
+exploreBtnEls.forEach(exploreBtnEl=>{
+    exploreBtnEl.addEventListener('click',()=>{
+        scroll.animateScroll(document.querySelector("#about-us"));
+    })
+})
+// 响应式
+const burgerEl =document.querySelector('.burger');
+burgerEl.addEventListener('click',()=>{
+    // togger，移除及切换CSS 类
+    headerEl.classList.toggle('open');
+})
+// 滚动跳转时关闭导航面板显示
+document.addEventListener('scrollStart',()=>{
+    if(headerEl.classList.contains("open")){
+        headerEl.classList.remove('open');
+    }
+})
