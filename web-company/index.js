@@ -28,7 +28,7 @@ glide.on('run.before', () => {
 })
 
 glide.mount();
-// 图片删选isotope
+// 图片筛选isotope
 const isotope = new Isotope('.cases', {
     // 每行占满换行
     layoutMode: 'fitRows',
@@ -121,9 +121,27 @@ window.addEventListener('scroll', () => {
 })
 // smooth-scroll库，监听跳转按钮（包含#号的）
 const scroll = new SmoothScroll('nav a[href*="#"],.scrollToTop a[href*="#"]', {
-    header: 'header', // 滚动到目标区域
+    // header: 'header', // 滚动到目标区域
     offset: 80, //多余滚动80px
 })
+// Log scroll events
+var logScrollEvent = function (event) {
+
+	// The event type
+	console.log('type:', event.type);
+
+	// The anchor element being scrolled to
+	console.log('anchor:', event.detail.anchor);
+
+	// The anchor link that triggered the scroll
+	console.log('toggle:', event.detail.toggle);
+
+};
+
+// Listen for scroll events
+document.addEventListener('scrollStart', logScrollEvent, false);
+document.addEventListener('scrollStop', logScrollEvent, false);
+document.addEventListener('scrollCancel', logScrollEvent, false);
 // 滚动跳转时关闭导航面板显示
 document.addEventListener('scrollStart', () => {
     if (headerEl.classList.contains("open")) {
