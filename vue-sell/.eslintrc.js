@@ -20,7 +20,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
     'semi': ['error', 'always'], //没有分号报错
     'no-tabs': 0,
-    'indent': 0, //缩进为0
+    'indent': 0, //不检查缩进
     'space-before-function-paren': 0  
   }
 }
