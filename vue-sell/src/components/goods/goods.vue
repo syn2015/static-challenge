@@ -134,6 +134,7 @@
           return;
         }
         this.selectedFood = food;
+        // 调用子组件的方法show()
         this.$refs.food.show();
       },
       // 实现子组件的派发事件add(target)

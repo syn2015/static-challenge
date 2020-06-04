@@ -1,11 +1,13 @@
 <template>
   <div class="cartcontrol">
     <transition name="move">
+      <!-- @click.stop.prevent阻止默认和冒泡 -->
       <div class="cart-decrease" v-show="food.count>0" @click.stop.prevent="decreaseCart">
         <span class="inner icon-remove_circle_outline"></span>
       </div>
     </transition>
     <div class="cart-count" v-show="food.count>0">{{food.count}}</div>
+    <!-- @click.stop.prevent阻止默认和冒泡 -->
     <div class="cart-add icon-add_circle" @click.stop.prevent="addCart"></div>
   </div>
 </template>
