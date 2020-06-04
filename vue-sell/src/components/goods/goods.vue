@@ -43,7 +43,7 @@
       <shopcart ref="shopcart" :selectFoods="selectFoods" :deliveryPrice="seller.deliveryPrice"
                 :minPrice="seller.minPrice"></shopcart>
     </div>
-    
+   
     <food @add="addFood" :food="selectedFood" ref="food"></food>
   </div>
 </template>
@@ -84,15 +84,18 @@
         }
         return 0;
       },
+      // 选中的商品
       selectFoods() {
         let foods = [];
         this.goods.forEach((good) => {
           good.foods.forEach((food) => {
+            // count属性是子组件添加的
             if (food.count) {
               foods.push(food);
             }
           });
         });
+        // 返回选中的商品
         return foods;
       }
     },
@@ -133,11 +136,13 @@
         this.selectedFood = food;
         this.$refs.food.show();
       },
+      // 实现子组件的派发事件add(target)
       addFood(target) {
         this._drop(target);
       },
+      // 小球飞入
       _drop(target) {
-        // 体验优化,异步执行下落动画
+        // 体验性能优化,异步执行下落动画
         this.$nextTick(() => {
           this.$refs.shopcart.drop(target);
         });
@@ -145,6 +150,7 @@
       // 初始化滑动组件
       _initScroll() {
         this.meunScroll = new BScroll(this.$refs.menuWrapper, {
+          // 启动click事件
           click: true
         });
 
