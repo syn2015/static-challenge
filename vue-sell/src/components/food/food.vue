@@ -115,6 +115,7 @@
         this.$emit('add', event.target);
         Vue.set(this.food, 'count', 1);
       },
+      // 选择评论类型
       needShow(type, text) {
         if (this.onlyContent && !text) {
           return false;
@@ -128,22 +129,27 @@
       addFood(target) {
         this.$emit('add', target);
       },
+      // 实现子组件的派发事件select
       selectRating(type) {
         this.selectType = type;
         this.$nextTick(() => {
           this.scroll.refresh();
         });
       },
+       // 实现子组件的派发事件toggle
       toggleContent() {
         this.onlyContent = !this.onlyContent;
+        // vue下一次异步更新dom时候,同步一下bscroll组件的高度,避免回弹bug
         this.$nextTick(() => {
           this.scroll.refresh();
         });
       }
     },
+    // 转换时间戳
     filters: {
       formatDate(time) {
         let date = new Date(time);
+        // js模块
         return formatDate(date, 'yyyy-MM-dd hh:mm');
       }
     },
@@ -296,23 +302,28 @@
             top: 16px
             line-height: 12px
             font-size: 0
+            // 名字
             .name
               display: inline-block
               margin-right: 6px
               vertical-align: top
               font-size: 10px
               color: rgb(147, 153, 159)
+            // 头像
             .avatar
               border-radius: 50%
+          // 评价时间
           .time
             margin-bottom: 6px
             line-height: 12px
             font-size: 10px
             color: rgb(147, 153, 159)
+          // 评价内容
           .text
             line-height: 16px
             font-size: 12px
             color: rgb(7, 17, 27)
+            // 手型图标
             .icon-thumb_up, .icon-thumb_down
               margin-right: 4px
               line-height: 16px
