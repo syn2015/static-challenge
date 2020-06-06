@@ -13,6 +13,7 @@
       </div>
     </div>
     <!-- 组件显示 -->
+    <!-- keep-alive 保留组件状态 -->
     <keep-alive>
       <router-view :seller="seller"></router-view>
     </keep-alive>
@@ -31,8 +32,10 @@
     data() {
       return {
         seller: {
+          // 立即执行函数取得id
           id: (() => {
             let queryParam = urlParse();
+            console.log('queryParam,', queryParam);
             return queryParam.id;
           })()
         }
@@ -44,6 +47,7 @@
         console.log('response.body,', response.body);
         response = response.body;
         if (response.errno === ERR_OK) {
+          // Object.assign(最终返回值,目标对象,源对象)
           this.seller = Object.assign({}, this.seller, response.data);
         }
       });
