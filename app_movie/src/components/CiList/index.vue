@@ -5,7 +5,7 @@
         <div>
           <span>{{item.nm}}</span>
           <span class="q">
-            <span class="price">{{item.sellPrice }}</span> 元起
+            <span class="price"> {{item.sellPrice===''?'暂无': item.sellPrice}}</span> 元起
           </span>
         </div>
         <div class="address">
@@ -39,6 +39,7 @@ export default {
     this.axios.get("/api/cinemaList?cityId=10").then(res => {
       var msg = res.data.msg;
       if (msg === "ok") {
+        // debugger
         this.cinemaList = res.data.data.cinemas;
         // this.isLoading = false;
         // this.prevCityId = cityId;

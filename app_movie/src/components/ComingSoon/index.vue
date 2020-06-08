@@ -30,12 +30,12 @@ export default {
     };
   },
   mounted() {
-    this.axios.get('/api/movieComingList?cityId=').then((res)=>{
+    this.axios.get('/api/movieComingList?cityId=10').then((res)=>{
       let msg=res.data.msg;
       if(msg==='ok'){
         this.comingList=res.data.data.comingList;
-         this.isLoading = false;
-                this.prevCityId = cityId;
+        //  this.isLoading = false;
+        //         this.prevCityId = cityId;
       }
     })
   }

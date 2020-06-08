@@ -48,11 +48,11 @@ export default {
   watch: {
     message(newVal) {
       var that = this;
-      var cityId = this.$store.state.city.id;
+      // var cityId = this.$store.state.city.id;
       this.cancelRequest();
       // 2.axios 取消频繁的请求
       this.axios
-        .get("/api/searchList?cityId=" + cityId + "&kw=" + newVal, {
+        .get("/api/searchList?cityId=10"+ "&kw=" + newVal, {
           cancelToken: new this.axios.CancelToken(function(c) {
             that.source = c;
           })
