@@ -15,9 +15,9 @@
           <i class="iconfont icon-sousuo"></i>
         </router-link>
       </div>
-      <!-- <keep-alive> -->
+      <keep-alive>
         <router-view></router-view>
-      <!-- </keep-alive> -->
+      </keep-alive>
     </div>
 
     <TabBar />

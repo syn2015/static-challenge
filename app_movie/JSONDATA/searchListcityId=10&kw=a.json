@@ -1,0 +1,124 @@
+{
+    "msg": "ok",
+    "status": 0,
+    "data": {
+        "movies": {
+            "list": [
+                {
+                    "cat": "喜剧,科幻,动画",
+                    "dir": "丁亮,邵和麒",
+                    "dur": 99,
+                    "enm": "Boonie Bears:The Wild Life",
+                    "globalReleased": false,
+                    "id": 1298938,
+                    "img": "http://p0.meituan.net/w.h/movie/dc99d67cdf8b1f9d7aa1eeb2e9f10c471714713.jpg",
+                    "movieType": 0,
+                    "nm": "熊出没·狂野大陆",
+                    "onlinePlay": false,
+                    "pubDesc": "2020大陆上映",
+                    "rt": "2020",
+                    "sc": 0,
+                    "show": "",
+                    "showst": 1,
+                    "star": "张秉君,谭笑,张伟",
+                    "time": "2020",
+                    "type": 0,
+                    "ver": "3D",
+                    "vodPlay": false,
+                    "wish": 181482,
+                    "wishst": 0,
+                    "version": "v3d"
+                },
+                {
+                    "cat": "动作,爱情,科幻",
+                    "dir": "李阳",
+                    "dur": 0,
+                    "enm": "Evacuate from the 21st Century",
+                    "globalReleased": false,
+                    "id": 672148,
+                    "img": "http://p0.meituan.net/w.h/moviemachine/6457117eb44d266376f08f0ec860364b1177489.jpg",
+                    "movieType": 0,
+                    "nm": "从21世纪安全撤离",
+                    "onlinePlay": false,
+                    "pubDesc": "2020大陆上映",
+                    "rt": "2020",
+                    "sc": 0,
+                    "show": "",
+                    "showst": 1,
+                    "time": "2020",
+                    "type": 0,
+                    "ver": "2D",
+                    "vodPlay": false,
+                    "wish": 7805,
+                    "wishst": 0,
+                    "version": ""
+                },
+                {
+                    "cat": "剧情,犯罪",
+                    "dir": "柯汶利",
+                    "dur": 112,
+                    "enm": "Sheep Without a Shepherd",
+                    "fra": "澳大利亚,美国,新加坡",
+                    "frt": "2019-12-19,2019-12-20,2020-01-09",
+                    "globalReleased": true,
+                    "id": 1218273,
+                    "img": "http://p1.meituan.net/w.h/movie/967b253953bc7e660cfadbf9d78f67b62852693.jpg",
+                    "movieType": 0,
+                    "nm": "误杀",
+                    "onlinePlay": false,
+                    "pubDesc": "2019-12-13大陆上映",
+                    "rt": "2019-12-13",
+                    "sc": 9.4,
+                    "show": "",
+                    "showst": 2,
+                    "star": "肖央,谭卓,陈冲",
+                    "type": 0,
+                    "ver": "IMAX 2D/2D",
+                    "vodPlay": true,
+                    "wish": 40632,
+                    "wishst": 0,
+                    "version": "v2d imax"
+                }
+            ],
+            "total": 311115,
+            "type": 0
+        },
+        "cinemas": {
+            "list": [
+                {
+                    "id": 15997,
+                    "nm": "AMG海上明珠影城（上海大宁音乐广场IMAX店）",
+                    "sellPrice": "30.0",
+                    "referencePrice": "0.0",
+                    "addr": "静安区万荣路777号大宁音乐广场A座1层",
+                    "sell": true,
+                    "deal": 0,
+                    "hallType": [
+                        "IMAX厅"
+                    ],
+                    "allowRefund": 1,
+                    "endorse": 1,
+                    "snack": 1,
+                    "vipDesc": "",
+                    "distance": "1061.4km"
+                },
+                {
+                    "id": 24205,
+                    "nm": "普陀大光明影城",
+                    "sellPrice": "38.0",
+                    "referencePrice": "0.0",
+                    "addr": "普陀区真光路1288号百联中环购物广场A区3楼",
+                    "sell": true,
+                    "deal": 0,
+                    "allowRefund": 1,
+                    "endorse": 1,
+                    "snack": 1,
+                    "vipDesc": "",
+                    "distance": "1062.6km"
+                }
+            ],
+            "total": 17,
+            "type": 2
+        }
+    }
+}
