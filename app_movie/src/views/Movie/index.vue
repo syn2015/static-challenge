@@ -4,11 +4,11 @@
     <div id="content">
       <div class="movie_menu">
         <router-link class="city_name" tag="div" to="/movie/city">
-          <span>大连</span>
+          <span>北京</span>
           <i class="iconfont icon-lower-triangle"></i>
         </router-link>
-        <div class="hot_swtich" >
-          <router-link class="hot_item " tag="div" to="/movie/nowPlaying">正在热映</router-link>
+        <div class="hot_swtich">
+          <router-link class="hot_item" tag="div" to="/movie/nowPlaying">正在热映</router-link>
           <router-link class="hot_item" tag="div" to="/movie/comingSoon">即将上映</router-link>
         </div>
         <router-link class="search_entry" tag="div" to="/movie/search">
@@ -29,6 +29,11 @@ import Heador from "@/components/Header";
 import TabBar from "@/components/TabBar";
 export default {
   name: "Movie",
+  data() {
+    return {
+      isLoading: true
+    };
+  },
   components: {
     Heador,
     TabBar

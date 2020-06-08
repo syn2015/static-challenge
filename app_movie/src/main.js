@@ -3,6 +3,8 @@ import App from './App.vue'
 import router from '../routers'
 import store from '../stores'
 import Axios from 'axios'
+import Scroller from '@/components/Scroller'
+import Loading from '@/components/Loading'
 Vue.prototype.axios=Axios;
 
 Vue.config.productionTip = false
@@ -10,6 +12,9 @@ Vue.config.productionTip = false
 Vue.filter('setWH',(url,arg)=>{
   return url.replace(/w\.h/,arg);
 })
+// 全局组件
+Vue.component('Scroller',Scroller)
+Vue.component('Loading',Loading)
 
 new Vue({
   router,

@@ -1,25 +1,35 @@
 <template>
   <div class="city_body">
     <div class="city_list">
-      <div class="city_hot">
-        <h2>热门城市</h2>
-        <ul class="clearfix">
-          <li v-for="(item,index) in hotList" :key="index">{{item.nm}}</li>
-        </ul>
-      </div>
-      <div  class="city_sort" ref="city_sort">
-        <div v-for="(item,index) in cityList" :key="index">
-          <h2>{{item.index}}</h2>
-          <ul>
-            <li v-for="(itemList,itemIndex) in item.list" :key="itemIndex" >{{itemList.nm}}</li>
-          </ul>
+       <Loading v-if="isLoading"></Loading>
+      <!-- 全局组件Scroller -->
+      <Scroller ref="city_List" v-else>
+        <div>
+          <div class="city_hot">
+            <h2>热门城市</h2>
+            <ul class="clearfix">
+              <li v-for="(item,index) in hotList" :key="index">{{item.nm}}</li>
+            </ul>
+          </div>
+          <div class="city_sort" ref="city_sort">
+            <div v-for="(item,index) in cityList" :key="index">
+              <h2>{{item.index}}</h2>
+              <ul>
+                <li v-for="(itemList,itemIndex) in item.list" :key="itemIndex">{{itemList.nm}}</li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
+      </Scroller>
     </div>
 
     <div class="city_index">
       <ul>
-        <li v-for="(item,index) in cityList" :key="item.index" @touchstart="handleToIndex(index)">{{item.index}}</li>
+        <li
+          v-for="(item,index) in cityList"
+          :key="item.index"
+          @touchstart="handleToIndex(index)"
+        >{{item.index}}</li>
       </ul>
     </div>
   </div>
@@ -42,7 +52,9 @@ export default {
       if (msg == "ok") {
         var cities = res.data.data.cities;
         let { cityList, hotList } = this.formatCityList(cities);
-        this.cityList = cityList; this.hotList = hotList;
+        this.cityList = cityList;
+        this.hotList = hotList;
+        this.isLoading=false;
       }
     });
   },
@@ -100,12 +112,13 @@ export default {
         hotList
       };
     },
-     handleToIndex(index){
-       var h2=this.$refs.city_sort.getElementsByTagName('h2');
-      
-        this.$refs.city_sort.parentNode.scrollTop = h2[index].offsetTop;
-      //  this.$refs.city_List.toScrollTop(-h2[index].offsetTop);
-     }
+    handleToIndex(index) {
+      var h2 = this.$refs.city_sort.getElementsByTagName("h2");
+      // 未使用bscroll组件
+      // this.$refs.city_sort.parentNode.scrollTop = h2[index].offsetTop;
+      // 使用bscroll组件
+      this.$refs.city_List.toScrollTop(-h2[index].offsetTop);
+    }
   }
 };
 </script>
