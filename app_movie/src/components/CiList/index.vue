@@ -1,6 +1,6 @@
 <template>
   <div class="cinema_body">
-     <Loading v-if="isLoading"></Loading>
+    <Loading v-if="isLoading"></Loading>
     <Scroller v-else>
       <ul>
         <li v-for="item in cinemaList" :key="item.id">
@@ -38,14 +38,19 @@ export default {
       prevCityId: -1
     };
   },
-  mounted() {
-    this.axios.get("/api/cinemaList?cityId=10").then(res => {
+  activated() {
+    var cityId = this.$store.state.city.id;
+    if (this.prevCityId === cityId) {
+      return;
+    }
+    this.isLoading = true;
+    this.axios.get("/api/cinemaList?cityId="+cityId).then(res => {
       var msg = res.data.msg;
       if (msg === "ok") {
         // debugger
         this.cinemaList = res.data.data.cinemas;
         this.isLoading = false;
-        // this.prevCityId = cityId;
+        this.prevCityId = cityId;
       }
     });
   },

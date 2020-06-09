@@ -35,13 +35,17 @@ export default {
       prevCityId: -1
     };
   },
-  mounted() {
-    this.axios.get("/api/movieComingList?cityId=10").then(res => {
+  activated() {
+     let cityId=this.$store.state.city.id;
+    // 没有切换到城市
+    if(this.prevCityId===cityId){return ;}
+    this.isLoading=true;
+    this.axios.get("/api/movieComingList?cityId="+cityId).then(res => {
       let msg = res.data.msg;
       if (msg === "ok") {
         this.comingList = res.data.data.comingList;
          this.isLoading = false;
-        //         this.prevCityId = cityId;
+                this.prevCityId = cityId;
       }
     });
   }

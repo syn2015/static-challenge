@@ -36,15 +36,33 @@ export default {
       movieList: [],
       pullDownMsg: "",
       isLoading: true,
+      // 上一个城市ID
       prevCityId: -1
     };
   },
-  mounted() {
+  // mounted() {
+  //   this.axios.get("/api/movieOnInfoList?cityId=3").then(res => {
+  //     let msg = res.data.msg;
+  //     if (msg === "ok") {
+  //       this.movieList = res.data.data.movieList;
+  //       this.isLoading=false;
+  //     }
+  //   });
+  // },
+  // activated() ,keep-alive组件激活时调用,服务器渲染期间不被调用
+  activated() {
+    let cityId = this.$store.state.city.id;
+    // 没有切换到城市
+    if (this.prevCityId === cityId) {
+      return;
+    }
+    this.isLoading = true;
     this.axios.get("/api/movieOnInfoList?cityId=3").then(res => {
       let msg = res.data.msg;
       if (msg === "ok") {
         this.movieList = res.data.data.movieList;
-        this.isLoading=false;
+        this.isLoading = false;
+        this.prevCityId = cityId;
       }
     });
   },

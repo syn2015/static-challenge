@@ -4,7 +4,7 @@
     <div id="content">
       <div class="movie_menu">
         <router-link class="city_name" tag="div" to="/movie/city">
-          <span>北京</span>
+          <span>{{$store.state.city.nm}}</span>
           <i class="iconfont icon-lower-triangle"></i>
         </router-link>
         <div class="hot_swtich">
@@ -19,7 +19,7 @@
         <router-view></router-view>
       </keep-alive>
     </div>
-
+    <!-- <MessageBox /> -->
     <TabBar />
   </div>
 </template>
@@ -27,6 +27,9 @@
 <script>
 import Heador from "@/components/Header";
 import TabBar from "@/components/TabBar";
+// messageBox
+// import MessageBox from "@/components/JS/MessageBox";
+import { messageBox } from "@/components/JS";
 export default {
   name: "Movie",
   data() {
@@ -36,7 +39,36 @@ export default {
   },
   components: {
     Heador,
-    TabBar
+    TabBar,
+    // MessageBox
+  },
+  mounted() {
+    // 延迟
+    setTimeout(() => {
+      this.axios.get("/api/getLocation").then(res => {
+        var msg = res.data.msg;
+        if (msg === "ok") {
+          var nm = res.data.data.nm;
+          var id = res.data.data.id;
+          // 和上次位置相同则停止显示弹窗
+          // == 双等判断
+          if (this.$store.state.city.id == id) {
+            return;
+          }
+          messageBox({
+            title: "定位",
+            content: nm,
+            cancel: "取消",
+            ok: "切换定位",
+            handleOk() {
+              window.localStorage.setItem("nowNm", nm);
+              window.localStorage.setItem("nowId", id);
+              window.location.reload();
+            }
+          });
+        }
+      });
+    }, 3000);
   }
 };
 </script>
