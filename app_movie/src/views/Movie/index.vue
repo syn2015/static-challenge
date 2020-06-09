@@ -17,13 +17,12 @@
       </div>
       <keep-alive>
         <router-view></router-view>
-         <!-- 命名路由 -->
-    <router-view name="detail"/>
       </keep-alive>
     </div>
     <!-- <MessageBox /> -->
     <TabBar />
-   
+    <!-- 命名路由 -->
+    <router-view name="detail" />
   </div>
 </template>
 
@@ -42,7 +41,7 @@ export default {
   },
   components: {
     Heador,
-    TabBar,
+    TabBar
     // MessageBox
   },
   mounted() {

@@ -100,7 +100,8 @@ export default {
       var msg = res.data.msg;
       if (msg === "ok") {
         this.isLoading = false;
-        this.detailMovie = res.data.data.detailMovie;
+		this.detailMovie = res.data.data.detailMovie;
+		// 再dom完成以后开始swiper
         this.$nextTick(() => {
           new Swiper(this.$refs.detail_player, {
             slidesPerView: "auto",
@@ -166,30 +167,30 @@ export default {
         left: 0;
         top: 0;
         z-index: 2;
-      }
-      .detail_list_img {
-        width: 108px;
-        height: 150px;
-        border: solid 1px #f0f2f3;
-        margin: 20px;
-        img {
-          width: 100%;
-          height: 100%;
+        .detail_list_img {
+          width: 108px;
+          height: 150px;
+          border: solid 1px #f0f2f3;
+          margin: 20px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
         }
-      }
-      .detail_list_info {
-        margin-top: 20px;
-        h2 {
-          font-size: 20px;
-          color: white;
-          font-weight: normal;
-          line-height: 40px;
-        }
-        p {
-          color: white;
-          line-height: 20px;
-          font-size: 14px;
-          color: #ccc;
+        .detail_list_info {
+          margin-top: 20px;
+          h2 {
+            font-size: 20px;
+            color: white;
+            font-weight: normal;
+            line-height: 40px;
+          }
+          p {
+            color: white;
+            line-height: 20px;
+            font-size: 14px;
+            color: #ccc;
+          }
         }
       }
     }
