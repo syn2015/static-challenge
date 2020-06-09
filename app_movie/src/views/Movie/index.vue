@@ -17,10 +17,13 @@
       </div>
       <keep-alive>
         <router-view></router-view>
+         <!-- 命名路由 -->
+    <router-view name="detail"/>
       </keep-alive>
     </div>
     <!-- <MessageBox /> -->
     <TabBar />
+   
   </div>
 </template>
 

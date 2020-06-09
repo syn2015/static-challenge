@@ -57,7 +57,7 @@ export default {
       return;
     }
     this.isLoading = true;
-    this.axios.get("/api/movieOnInfoList?cityId=3").then(res => {
+    this.axios.get("/api/movieOnInfoList?cityId="+cityId).then(res => {
       let msg = res.data.msg;
       if (msg === "ok") {
         this.movieList = res.data.data.movieList;
@@ -67,8 +67,9 @@ export default {
     });
   },
   methods: {
+    // 点击查看详情
     handleToDetail(movieId) {
-      //console.log(movieId);
+      console.log(movieId);
       this.$router.push("/movie/detail/1/" + movieId);
     },
     handleToScroll(pos) {
