@@ -1,5 +1,5 @@
 module.exports = {
-    // publicPath:'/AppMovie',
+    publicPath:'/movie',
     devServer: {
         disableHostCheck: true,
         host: '192.168.43.2',

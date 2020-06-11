@@ -8,8 +8,8 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  base: process.env.BASE_URL,
-  // base: 'AppMovie',
+  // base: process.env.BASE_URL,
+  base: 'movie',
   routes: [
     MovieRouter,
     MineRouter,
