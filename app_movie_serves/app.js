@@ -20,7 +20,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 // 启用session
 app.use(session({
-  secret: 'keyboard cat',
+  secret: 'keyboard-cat',
   name:'sessionId',
   resave: false,
   saveUninitialized: false,

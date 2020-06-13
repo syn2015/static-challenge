@@ -21,7 +21,7 @@ let Email = {
     config: {
         host: 'smtp.qq.com',
         port: 587,
-        secureConnection: true, // 使用了 SSL
+       
         auth: {
 
             user: '1816540197@qq.com',
@@ -33,7 +33,7 @@ let Email = {
         return nodemailer.createTransport(this.config);
     },
     get verify() {
-        return Math.random().toString().substring(2, 6);
+        return Math.random().toString().substring(2,6);
     }
 
 }

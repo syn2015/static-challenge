@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 // 
 router.post('/login',usersContoller.login);
 router.post('/register',usersContoller.register);
-router.post('/verify',usersContoller.verify);
+router.get('/verify',usersContoller.verify);
 router.post('/logout',usersContoller.logout);
 router.post('/getUser',usersContoller.getUser);
 router.post('/findPassword',usersContoller.findPassword);
