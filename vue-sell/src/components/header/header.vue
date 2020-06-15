@@ -286,12 +286,18 @@ export default {
     // v-leave-active：定义离开过渡生效时的状态。
     &.fade-enter-active, &.fade-leave-active {
       transition: all 0.5s;
+      // transition: all 5s;
     }
     // v-enter：定义进入过渡的开始状态。
     &.fade-enter, &.fade-leave-active {
       opacity: 0;
       background: rgba(7, 17, 27, 0);
     }
+    // 前半场动画
+    //  &.fade-enter, &.fade-leave {
+    //   opacity: 0;
+    //   background: rgba(7, 17, 27, 0);
+    // }
   // css sticky footer布局，容器一，需要清除浮动
     .detail-wrapper {
       width: 100%;
