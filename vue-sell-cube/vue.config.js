@@ -5,6 +5,8 @@ const seller = appData.seller
 const goods = appData.goods
 const ratings = appData.ratings
 
+const openInEditor = require('launch-editor-middleware')
+
 function resolve(dir) {
   return path.join(__dirname, dir)
 }
@@ -46,6 +48,11 @@ module.exports = {
           data: ratings
         })
       })
+      /**
+       * 我使用的是Visual Studio Code 所以这边传的编辑器类型是code
+       * 编辑器类型在文章下面了，自己找吧。
+       */
+      app.use('/__open-in-editor', openInEditor('code'))
     }
   },
   chainWebpack(config) {

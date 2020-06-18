@@ -51,6 +51,7 @@
         ]
       }
     },
+    // created()获取数据
     created() {
       this._getSeller()
     },
